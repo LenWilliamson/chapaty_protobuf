@@ -1,0 +1,92 @@
+syntax = "proto3";
+package pl;
+
+service RequestProfitLoss {
+    rpc requestProfitAndLoss (ProfitLossRequest) returns (ProfitLossResponse);
+}
+// TODO man kann auch JSON definieren (ChatGPT fragen)
+
+message ProfitLossRequest {
+    string bot = 1;
+    repeated uint32 years = 2;
+    repeated string market = 3;
+    string data_provider = 4;
+    string granularity = 5;
+    StopLoss stop_loss = 6;
+    TakeProfit take_profit = 7;
+    string vol_data = 8;
+    string ohlc_data = 9;
+}
+
+message TakeProfit {
+    string condition = 1;
+    double offset = 2;
+}
+
+message StopLoss {
+    string condition = 1;
+    double offset = 2;
+}
+
+message ProfitLossResponse {
+    repeated ProfitLossTable profit_loss_table = 1;
+    PerformanceReport performance_report = 2;
+    map<uint32,  EquityCurve> equity_curve = 3;
+}
+
+message EquityCurve {
+    repeated double equity_curve = 1;
+}
+
+message ProfitLossTable {
+    repeated int64 calender_week = 10;
+    repeated string date = 20;
+    repeated string strategy = 30;
+    repeated string market = 40;
+    repeated string trade_direction = 50;
+    repeated double entry = 60;
+    repeated double target = 70;
+    repeated double stop_loss = 80;
+    repeated double expected_win_tik = 90;
+    repeated double expected_loss_tik = 100;
+    repeated double expected_win_dollar = 110;
+    repeated double expected_loss_dollar = 120;
+    repeated double crv = 130;
+    repeated string entry_timestamp = 140;
+    repeated string target_timestamp = 150;
+    repeated string stop_loss_timestamp = 160;
+    repeated double exit_price = 170;
+    repeated string status = 180;
+    repeated double profit_loss_tik = 190;
+    repeated double profit_loss_dollar = 200;
+}
+
+message PerformanceReport {
+    repeated int64 year = 10;
+    repeated string strategy = 20;
+    repeated string market = 30;
+    repeated double net_profit = 40;
+    repeated double avg_win_by_trade = 50;
+    repeated double max_draw_down_abs = 60;
+    repeated double max_draw_down_rel = 70;
+    repeated double percentage_profitability = 80;
+    repeated double ratio_avg_win_by_avg_loss = 90;
+    repeated double avg_win = 100;
+    repeated double avg_loss = 110;
+    repeated double profit_factor = 120;
+    repeated double total_win = 130;
+    repeated double clean_win = 131;
+    repeated double timeout_win = 132;
+    repeated double total_loss = 140;
+    repeated double clean_loss = 141;
+    repeated double timeout_loss = 142;
+    repeated int64 total_number_winner_trades = 150;
+    repeated int64 total_number_loser_trades = 160;
+    repeated int64 total_number_trades = 170;
+    repeated int64 number_winner_trades = 180;
+    repeated int64 number_loser_trades = 190;
+    repeated int64 number_timeout_winner_trades = 200;
+    repeated int64 number_timeout_loser_trades = 210;
+    repeated int64 number_timeout_trades = 220;
+    repeated int64 number_no_entry = 230;
+}
