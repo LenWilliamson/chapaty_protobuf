@@ -1,0 +1,17 @@
+syntax = "proto3";
+package chapaty;
+
+message PerformanceReport {
+    repeated string year = 10;
+    repeated string market = 20;
+    repeated string strategy = 30;
+    repeated double net_profit = 40;
+    repeated double avg_win_by_trade = 50;
+    repeated double max_draw_down_abs = 60;
+    repeated double max_draw_down_rel = 70;
+    repeated double percentage_profitability = 80;
+    repeated double ratio_avg_win_by_avg_loss = 90;
+    repeated double avg_win = 100;
+    repeated double avg_loss = 110;
+    repeated double profit_factor = 120;
+}

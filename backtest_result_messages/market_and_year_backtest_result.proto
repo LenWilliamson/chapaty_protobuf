@@ -1,0 +1,54 @@
+syntax = "proto3";
+package chapaty;
+
+import "backtest_result_schema/pnl.proto";
+import "backtest_result_schema/performance_report.proto";
+import "backtest_result_schema/trade_breakdown_report.proto";
+import "backtest_result_schema/equity_curve.proto";
+
+message MarketAndYearBacktestResult {
+    PnLStatement pnl_statement = 1;
+    PerformanceReports performance_reports = 2;
+    TradeBreakdownReports trade_breakdown_reports = 3;
+    EquityCurvesReport equity_curves = 4;
+}
+
+message PnLStatement {
+    string strategy_name = 1;
+    repeated string markets = 2;
+    map<string, PnLReports> pnl_data = 3;
+}
+
+message PerformanceReports {
+    repeated string markets = 1;
+    map<string, PerformanceReport> reports = 2;
+}
+
+message TradeBreakdownReports {
+    repeated string markets = 1;
+    map<string, TradeBreakdownReport> reports = 2;
+}
+
+message EquityCurvesReport {
+    repeated string markets = 1;
+    map<string, EquityCurves> curves = 2;
+}
+
+message PnLReports {
+    string market = 1;
+    repeated uint32 years = 2;
+    map<uint32, PnLReport> reports = 3;
+}
+
+message PnLReport {
+    string market = 1;
+    uint32 year = 2;
+    string strategy = 3;
+    PnL pnl = 4;
+}
+
+message EquityCurves {
+    string market = 1;
+    repeated uint32 years = 2;
+    map<u32, EquityCurve> curves = 3;
+}

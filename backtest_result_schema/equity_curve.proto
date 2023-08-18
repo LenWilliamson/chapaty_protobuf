@@ -1,0 +1,7 @@
+
+syntax = "proto3";
+package chapaty;
+
+message EquityCurve {
+    repeated double equity_curve = 1;
+}

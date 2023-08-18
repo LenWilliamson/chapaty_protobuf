@@ -1,0 +1,25 @@
+syntax = "proto3";
+package chapaty;
+
+message PnL {
+    repeated int64 calender_week = 10;
+    repeated string date = 20;
+    repeated string strategy = 30;
+    repeated string market = 40;
+    repeated string trade_direction = 50;
+    repeated double entry = 60;
+    repeated double take_profit = 70;
+    repeated double stop_loss = 80;
+    repeated double expected_win_tick = 90;
+    repeated double expected_loss_tick = 100;
+    repeated double expected_win_dollar = 110;
+    repeated double expected_loss_dollar = 120;
+    repeated double crv = 130;
+    repeated string entry_timestamp = 140;
+    repeated string take_profit_timestamp = 150;
+    repeated string stop_loss_timestamp = 160;
+    repeated double exit_price = 170;
+    repeated string status = 180;
+    repeated double pl_tik = 190;
+    repeated double pl_dollar = 200;
+}

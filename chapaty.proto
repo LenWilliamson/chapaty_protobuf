@@ -1,0 +1,42 @@
+syntax = "proto3";
+package chapaty;
+
+import "backtest_result_messages/market_and_year_backtest_result.proto";
+import "backtest_result_messages/agg_market_and_year_backtest_result.proto";
+import "backtest_result_messages/market_and_agg_year_backtest_result.proto";
+import "backtest_result_messages/agg_market_and_agg_year_backtest_result.proto";
+
+
+service RequestBacktestResult {
+    rpc requestBacktestResult (BacktestRequest) returns (BacktestResponse);
+}
+
+message BacktestRequest {
+    string bot_name = 1;
+    string strategy = 2;
+    string data_provider = 3;
+    repeated string markets = 4;
+    repeated uint32 years = 5;
+    string market_simulation_data_kind = 6;
+    string time_interval = 7;
+    string time_frame = 8;
+    StopLoss stop_loss = 9;
+    TakeProfit take_profit = 10;
+}
+
+message TakeProfit {
+    string kind = 1;
+    double offset = 2;
+}
+
+message StopLoss {
+    string kind = 1;
+    double offset = 2;
+}
+
+message BacktestResponse {
+    MarketAndYearBacktestResult market_and_year = 1;
+    AggMarketAndYearBacktestResult agg_market_and_year = 2;
+    MarketAndAggYearBacktestResult market_and_agg_year = 3;
+    AggMarketAndAggYearBacktestResult agg_market_and_agg_year = 4;
+}
