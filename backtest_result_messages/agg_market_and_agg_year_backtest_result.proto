@@ -1,5 +1,5 @@
 syntax = "proto3";
-package chapaty;
+package chapaty_service_api;
 
 import "backtest_result_schema/pnl.proto";
 import "backtest_result_schema/performance_report.proto";

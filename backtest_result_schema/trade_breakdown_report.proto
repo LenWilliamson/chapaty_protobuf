@@ -1,6 +1,6 @@
 
 syntax = "proto3";
-package chapaty;
+package chapaty_service_api;
 
 message TradeBreakdownReport {
     repeated string year = 10;

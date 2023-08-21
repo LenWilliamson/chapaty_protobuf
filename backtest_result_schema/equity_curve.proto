@@ -1,6 +1,6 @@
 
 syntax = "proto3";
-package chapaty;
+package chapaty_service_api;
 
 message EquityCurve {
     repeated double equity_curve = 1;

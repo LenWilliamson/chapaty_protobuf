@@ -1,5 +1,5 @@
 syntax = "proto3";
-package chapaty;
+package chapaty_service_api;
 
 import "backtest_result_messages/market_and_year_backtest_result.proto";
 import "backtest_result_messages/agg_market_and_year_backtest_result.proto";
