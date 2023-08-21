@@ -2,7 +2,7 @@ syntax = "proto3";
 package chapaty_service_api;
 
 message PnL {
-    repeated int64 calender_week = 10;
+    repeated int64 calendar_week = 10;
     repeated string date = 20;
     repeated string strategy = 30;
     repeated string market = 40;
