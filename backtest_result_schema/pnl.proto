@@ -20,6 +20,6 @@ message PnL {
     repeated string stop_loss_timestamp = 160;
     repeated double exit_price = 170;
     repeated string status = 180;
-    repeated double pl_tik = 190;
+    repeated double pl_tick = 190;
     repeated double pl_dollar = 200;
 }
