@@ -6,11 +6,11 @@ import "backtest_result_schema/performance_report.proto";
 import "backtest_result_schema/trade_breakdown_report.proto";
 import "backtest_result_schema/equity_curve.proto";
 
-message AggMarketAndYearBacktestResult {
+message AggMarketsAndYearBacktestResult {
     PnLStatementAggMarkets pnl_statement = 1;
-    PerformanceReportAggMarket performance_report = 2;
-    TradeBreakdownReportsAggMarket trade_breakdown_report = 3;
-    EquityCurvesReportAggMarket equity_curves = 4;
+    PerformanceReportAggMarkets performance_report = 2;
+    TradeBreakdownReportsAggMarkets trade_breakdown_report = 3;
+    EquityCurvesAggMarkets equity_curves = 4;
 }
 
 message PnLStatementAggMarkets {
@@ -20,17 +20,17 @@ message PnLStatementAggMarkets {
     map<uint32, PnL> pnl_data = 4;
 }
 
-message PerformanceReportAggMarket {
+message PerformanceReportAggMarkets {
     repeated string markets = 1;
     PerformanceReport report = 2;
 }
 
-message TradeBreakdownReportsAggMarket {
+message TradeBreakdownReportsAggMarkets {
     repeated string markets = 1;
     TradeBreakdownReport report = 2;
 }
 
-message EquityCurvesReportAggMarket {
+message EquityCurvesAggMarkets  {
     repeated string markets = 1;
     repeated uint32 years = 2;
     map<uint32, EquityCurve> curves = 3;

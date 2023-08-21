@@ -37,14 +37,8 @@ message EquityCurvesReport {
 message PnLReports {
     string market = 1;
     repeated uint32 years = 2;
-    map<uint32, PnLReport> reports = 3;
-}
-
-message PnLReport {
-    string market = 1;
-    uint32 year = 2;
     string strategy = 3;
-    PnL pnl = 4;
+    map<uint32, PnL> reports = 4;
 }
 
 message EquityCurves {

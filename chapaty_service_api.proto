@@ -36,7 +36,7 @@ message StopLoss {
 
 message BacktestResponse {
     MarketAndYearBacktestResult market_and_year = 1;
-    AggMarketAndYearBacktestResult agg_market_and_year = 2;
-    MarketAndAggYearBacktestResult market_and_agg_year = 3;
-    AggMarketAndAggYearBacktestResult agg_market_and_agg_year = 4;
+    AggMarketsAndYearBacktestResult agg_market_and_year = 2;
+    MarketAndAggYearsBacktestResult market_and_agg_year = 3;
+    AggMarketsAndAggYearsBacktestResult agg_market_and_agg_year = 4;
 }
