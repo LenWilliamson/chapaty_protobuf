@@ -44,5 +44,5 @@ message PnLReports {
 message EquityCurves {
     string market = 1;
     repeated uint32 years = 2;
-    map<u32, EquityCurve> curves = 3;
+    map<uint32, EquityCurve> curves = 3;
 }
