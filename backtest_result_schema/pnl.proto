@@ -1,5 +1,6 @@
 syntax = "proto3";
 package chapaty_service_api;
+option go_package = "github.com/LenWilliamson/chapaty-web/chapaty_service_api/backtest_result_schema";
 
 message PnL {
     repeated int64 calendar_week = 10;

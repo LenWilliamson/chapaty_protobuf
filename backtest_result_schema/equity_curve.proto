@@ -1,6 +1,7 @@
 
 syntax = "proto3";
 package chapaty_service_api;
+option go_package = "github.com/LenWilliamson/chapaty-web/chapaty_service_api/backtest_result_schema";
 
 message EquityCurve {
     repeated double equity_curve = 1;

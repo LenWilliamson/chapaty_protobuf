@@ -1,5 +1,6 @@
 syntax = "proto3";
 package chapaty_service_api;
+option go_package = "github.com/LenWilliamson/chapaty-web/chapaty_service_api/backtest_result_messages";
 
 import "backtest_result_schema/pnl.proto";
 import "backtest_result_schema/performance_report.proto";

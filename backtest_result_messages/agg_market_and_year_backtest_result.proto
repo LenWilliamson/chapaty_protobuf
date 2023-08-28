@@ -5,6 +5,7 @@ import "backtest_result_schema/pnl.proto";
 import "backtest_result_schema/performance_report.proto";
 import "backtest_result_schema/trade_breakdown_report.proto";
 import "backtest_result_schema/equity_curve.proto";
+option go_package = "github.com/LenWilliamson/chapaty-web/chapaty_service_api/backtest_result_messages";
 
 message AggMarketsAndYearBacktestResult {
     PnLStatementAggMarkets pnl_statement = 1;

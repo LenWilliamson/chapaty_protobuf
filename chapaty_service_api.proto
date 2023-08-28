@@ -6,6 +6,7 @@ import "backtest_result_messages/agg_market_and_year_backtest_result.proto";
 import "backtest_result_messages/market_and_agg_year_backtest_result.proto";
 import "backtest_result_messages/agg_market_and_agg_year_backtest_result.proto";
 
+option go_package = "github.com/LenWilliamson/chapaty-web/chapaty_service_api";
 
 service RequestBacktestResult {
     rpc requestBacktestResult (BacktestRequest) returns (BacktestResponse);
