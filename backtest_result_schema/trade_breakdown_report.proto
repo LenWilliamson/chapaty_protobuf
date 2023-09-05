@@ -13,13 +13,13 @@ message TradeBreakdownReport {
     repeated double timeout_win = 70;
     repeated double clean_loss = 80;
     repeated double timeout_loss = 90;
-    repeated int64 total_number_winner_trades = 100;
-    repeated int64 total_number_loser_trades = 110;
-    repeated int64 total_number_trades = 120;
-    repeated int64 number_winner_trades = 130;
-    repeated int64 number_loser_trades = 140;
-    repeated int64 number_timeout_winner_trades = 150;
-    repeated int64 number_timeout_loser_trades = 160;
-    repeated int64 number_timeout_trades = 170;
-    repeated int64 number_no_entry = 180;
+    repeated uint32 total_number_winner_trades = 100;
+    repeated uint32 total_number_loser_trades = 110;
+    repeated uint32 total_number_trades = 120;
+    repeated uint32 number_winner_trades = 130;
+    repeated uint32 number_loser_trades = 140;
+    repeated uint32 number_timeout_winner_trades = 150;
+    repeated uint32 number_timeout_loser_trades = 160;
+    repeated uint32 number_timeout_trades = 170;
+    repeated uint32 number_no_entry = 180;
 }
