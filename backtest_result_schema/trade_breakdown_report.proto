@@ -4,6 +4,7 @@ package chapaty_service_api;
 option go_package = "github.com/LenWilliamson/chapaty-web/chapaty_service_api/backtest_result_schema";
 
 message TradeBreakdownReport {
+    repeated uint32 id = 1;
     repeated string year = 10;
     repeated string market = 20;
     repeated string strategy = 30;

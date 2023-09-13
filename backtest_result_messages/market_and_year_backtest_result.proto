@@ -9,9 +9,9 @@ import "backtest_result_schema/equity_curve.proto";
 
 message MarketAndYearBacktestResult {
     PnLStatement pnl_statement = 1;
-    PerformanceReports performance_reports = 2;
-    TradeBreakdownReports trade_breakdown_reports = 3;
-    EquityCurvesReport equity_curves = 4;
+    PerformanceReports performance_report = 2;
+    TradeBreakdownReports trade_breakdown_report = 3;
+    EquityCurvesReport equity_curve = 4;
 }
 
 message PnLStatement {

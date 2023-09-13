@@ -11,7 +11,7 @@ message AggMarketsAndYearBacktestResult {
     PnLStatementAggMarkets pnl_statement = 1;
     PerformanceReportAggMarkets performance_report = 2;
     TradeBreakdownReportsAggMarkets trade_breakdown_report = 3;
-    EquityCurvesAggMarkets equity_curves = 4;
+    EquityCurvesAggMarkets equity_curve = 4;
 }
 
 message PnLStatementAggMarkets {
